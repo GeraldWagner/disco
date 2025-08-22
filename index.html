@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wochenend-Plan</title>
+  <title>JGA · Ingolf</title>
   <style>
     :root { --bg:#0f172a; --fg:#e5e7eb; --muted:#94a3b8; --card:#111827; --accent:#38bdf8; }
     *{box-sizing:border-box} body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--fg)}
@@ -24,7 +24,8 @@
 <body>
   <main class="wrap">
     <header>
-      <h1>Übersicht zwei Varianten</h1>
+      <h1>JGA · Ingolf</h1>
+      <h2>Übersicht zwei Varianten</h2>
     </header>
 
     <section class="grid">
@@ -65,5 +66,33 @@
       </article>
     </section>
   </main>
+  <script>
+  // 🪩 Disco-Bälle erzeugen
+  const balls = Array.from({ length: 10 }, () => {
+    const el = document.createElement("div");
+    el.textContent = "🪩";
+    el.style.position = "fixed";
+    el.style.fontSize = "24px";
+    el.style.pointerEvents = "none";
+    el.style.top = Math.random() * window.innerHeight + "px";
+    el.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(el);
+    return { el, x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, dx: (Math.random()-0.5)*2, dy: (Math.random()-0.5)*2 };
+  });
+
+  // Bewegung
+  function animate() {
+    balls.forEach(b => {
+      b.x += b.dx;
+      b.y += b.dy;
+      if (b.x < 0 || b.x > window.innerWidth - 30) b.dx *= -1;
+      if (b.y < 0 || b.y > window.innerHeight - 30) b.dy *= -1;
+      b.el.style.left = b.x + "px";
+      b.el.style.top = b.y + "px";
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
 </body>
 </html>
