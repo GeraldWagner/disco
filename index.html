@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-  <title>Meine kleine Webseite</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wochenend-Plan</title>
+  <style>
+    :root { --bg:#0f172a; --fg:#e5e7eb; --muted:#94a3b8; --card:#111827; --accent:#38bdf8; }
+    *{box-sizing:border-box} body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--fg)}
+    .wrap{max-width:820px;margin:40px auto;padding:24px}
+    header h1{margin:0 0 6px;font-size:28px}
+    header p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:18px}
+    .tag{display:inline-flex;align-items:center;gap:.5ch;padding:.25rem .6rem;border-radius:999px;background:#0b1220;border:1px solid #1f2937;color:var(--accent);font-weight:600}
+    h2{margin:.2rem 0 1rem;font-size:20px}
+    ul{margin:0;padding-left:1.1rem}
+    li{margin:.35rem 0}
+    a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
+    time{color:var(--muted)}
+    .sub{margin-top:.25rem;color:var(--muted);font-size:14px}
+  </style>
 </head>
 <body>
-  <h1>Willkommen auf meiner kleinen Webseite</h1>
-  <p>Hier ist ein <a href="https://example.com">Link</a> zu einer externen Seite.</p>
+  <main class="wrap">
+    <header>
+      <h1>🌃 Simple Wochenend-Übersicht</h1>
+      <p>Fixe Zeiten & Links – klar & kompakt.</p>
+    </header>
+
+    <section class="grid">
+      <!-- Variante 1 -->
+      <article class="card">
+        <span class="tag">1️⃣ Freitag <time datetime="--09-12">12.09.</time></span>
+        <h2>Plan</h2>
+        <ul>
+          <li>18–20 Uhr · 🍽️ Essen & Trinken</li>
+          <li>20–23 Uhr · 🧖 Sauna:
+            <a href="https://www.kiezsauna.de/galerie/" target="_blank" rel="noopener">Kiezsauna</a>
+          </li>
+          <li>ab 23/24 Uhr · 💿 Club: About Blank
+            <ul class="sub">
+              <li><a href="https://de.ra.co/events/2192006" target="_blank" rel="noopener">Bass Down Borders</a></li>
+              <li><a href="https://www.youtube.com/watch?v=wgUaCSe-sP8" target="_blank" rel="noopener">Kaufmann</a></li>
+              <li><a href="https://www.youtube.com/watch?v=RyW9U7DjP24" target="_blank" rel="noopener">Pavelo Promillo</a></li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Variante 2 -->
+      <article class="card">
+        <span class="tag">2️⃣ Samstag <time datetime="--09-13">13.09.</time></span>
+        <h2>Plan</h2>
+        <ul>
+          <li>18–21 Uhr · 🧖 Sauna:
+            <a href="https://www.finnlandzentrum.de/sauna/" target="_blank" rel="noopener">Finnlandzentrum</a>
+          </li>
+          <li>21–23 Uhr · 🍽️ Essen & Trinken</li>
+          <li>ab 23/24 Uhr · 💿 Club: Tresor
+            <ul class="sub">
+              <li><a href="https://de.ra.co/events/2227380" target="_blank" rel="noopener">Tresor meets Surgeon</a></li>
+              <li><a href="https://www.youtube.com/watch?v=3T4-Wb4Z5yA" target="_blank" rel="noopener">Sept</a></li>
+              <li><a href="https://www.youtube.com/watch?v=rl1a3oZdMvI" target="_blank" rel="noopener">Surgeon</a></li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
